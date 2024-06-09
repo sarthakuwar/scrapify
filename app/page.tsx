@@ -10,7 +10,7 @@ const home = () => {
           <h1 className="head-text">
             unleash the power of <span className="text-primary"></span> </h1>
             <p className="mt-6"> powerful self server product and analytics </p>
-            <Searchbar/>
+          <Searchbar/>
         </div>
         <HeroCarousel/> 
        </div>

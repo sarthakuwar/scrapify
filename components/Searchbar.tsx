@@ -1,9 +1,9 @@
 
 'use client'
-//import { scrapeAndStoreProduct } from '@/lib/actions';
+import { scrapeAndStoreProduct } from '@/lib/actions';
 import { FormEvent, useState } from 'react'
 
-/*const isValidAmazonProductURL = (url: string) => {
+const isValidAmazonProductURL = (url: string) => {
   try {
     const parsedURL = new URL(url);
     const hostname = parsedURL.hostname;
@@ -20,10 +20,10 @@ import { FormEvent, useState } from 'react'
   }
 
   return false;
-}*/
+}
 
 const Searchbar = () => {
-  /*const [searchPrompt, setSearchPrompt] = useState('');
+  const [searchPrompt, setSearchPrompt] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -43,20 +43,22 @@ const Searchbar = () => {
     } finally {
       setIsLoading(false);
     }
-  }*/
+  }
 
-const handleSubmit = () => {
-};
+
 
   return (
     <form 
       className="flex flex-wrap gap-4 mt-12" 
       onSubmit={handleSubmit}
     >
-         <input 
+           <input 
         type="text"
-        placeholder="Enter product link">
-        </input>
+        value={searchPrompt}
+        onChange={(e) => setSearchPrompt(e.target.value)}
+        placeholder="Enter product link"
+        className="searchbar-input"
+      />
     
 
 
@@ -74,12 +76,3 @@ const handleSubmit = () => {
 
 export default Searchbar
 
-/*
-     <input 
-        type="text"
-        value={searchPrompt}
-        onChange={(e) => setSearchPrompt(e.target.value)}
-        placeholder="Enter product link"
-        className="searchbar-input"
-      />
-      */
